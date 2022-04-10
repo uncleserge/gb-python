@@ -60,5 +60,3 @@ for item in goods:
     analytics['eд'].append(item[1]['eд'])
 
 print(analytics)
-
-
