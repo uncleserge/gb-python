@@ -10,7 +10,7 @@
 from functools import reduce
 
 
-total = 0  # акумулятор
+total = 0  # аккумулятор
 
 while True:
     string = input("Введите числа через пробел. Введите &&, чтобы остановиться: ")
