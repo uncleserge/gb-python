@@ -9,3 +9,17 @@
 # Результат: [23, 1, 3, 10, 4, 11]
 
 
+import random
+
+
+quantity = 15  # quantity of list elements
+min_value = 0  # range of values
+max_value = 20
+
+# initial list
+my_list = [random.randint(min_value, max_value) for i in range(0, quantity)]
+print(f'Исходный список: {my_list}')
+
+# criteria based list
+new_list = [el for el in my_list if my_list.count(el) == 1]
+print(f'Сформированный список: {new_list}')

@@ -7,3 +7,17 @@
 # Результат: [12, 44, 4, 10, 78, 123].
 
 
+import random
+
+
+quantity = 15  # quantity of list elements
+min_value = 0  # range of values
+max_value = 120
+
+# initial list
+my_list = [random.randint(min_value, max_value) for i in range(0, quantity)]
+print(f'Исходный список: {my_list}')
+
+# new list
+new_list = [my_list[i] for i in range(1, quantity) if my_list[i-1] < my_list[i]]
+print(f'Сформированный список: {new_list}')

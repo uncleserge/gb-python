@@ -5,3 +5,27 @@
 # Во время выполнения расчёта для конкретных значений необходимо запускать скрипт с параметрами.
 
 
+from sys import argv
+
+
+def zp(hours, pay, bonus):
+    try:
+        result = hours * pay + bonus
+    except ValueError:
+        print('Ошибка! Введены неверные значения')
+    return result
+
+
+if len(argv) == 4:
+    try:
+        hours = int(argv[1])
+        pay = float(argv[2])
+        bonus = float(argv[3])
+    except ValueError as err:
+        print('Ошибка! Введены неправильные значения. Параметры: "выработка в часах", "ставка в час", "премия". ')
+        exit(-1)
+
+    print(f'Заработная платы сотрудника составляет {zp(hours, pay, bonus)} у.е.')
+else:
+    print('Для расчёта заработной платы сотрудника укажите через пробел выработку в часах, ставка в час, размер премии')
+
