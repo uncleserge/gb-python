@@ -11,6 +11,7 @@
 class Stationery:
     def __init__(self):
         self._title = 'Рисовалка :)'
+
     def draw(self):
         print(self._title, 'Запуск отрисовки.')
 
