@@ -13,7 +13,7 @@
 # Например: 20 м*5000 м*25 кг*5 см = 12500 т.
 
 
-class Road():
+class Road:
     __UNIT_WEIGHT = 25
     _length = 0
     _width = 0
