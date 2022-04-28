@@ -15,7 +15,7 @@ from abc import ABC, abstractmethod
 
 class Clothes(ABC):
     def __init__(self, name):
-        self._name = name
+        self.name = name
         super().__init__()
 
     @property
@@ -24,6 +24,8 @@ class Clothes(ABC):
 
     @name.setter
     def name(self, value):
+        if not isinstance(value, str):
+            raise TypeError("Имя должно быть строкой.")
         self._name = value
 
     @abstractmethod
@@ -66,3 +68,7 @@ print(jacket)
 coat = Coat("cool", 45)
 print(coat)
 
+try:
+    super_jacket = Jacket(1231, 186)
+except Exception as err:
+    print("Ошибка!", err)
