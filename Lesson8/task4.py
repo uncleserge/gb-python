@@ -17,33 +17,33 @@ class Stock:
 
 
 class Equipment:
-    def __init__(self, maker, model, weight, height, width, depth):
+    def __init__(self, maker, model, weight, height, width, length):
         self.maker = maker
         self.model = model
         self.weight = weight
         self.height = height
         self.width = width
-        self.depth = depth
+        self.length = length
 
     def __str__(self):
-        return f"Name: {self.maker}, Address: {self.model} "
+        return f"Manufacturer: {self.maker}, Model: {self.model} "
 
 
 class Printer(Equipment):
-    def __init__(self, maker, model, weight, height, width, depth, print_res, color=False):
+    def __init__(self, maker, model, weight, height, width, length, print_res, color=False):
         self.print_res = print_res
         self.color = color
-        super().__init__(maker, model, weight, height, width, depth)
+        super().__init__(maker, model, weight, height, width, length)
 
 
 class Scanner(Equipment):
-    def __init__(self, maker, model, weight, height, width, depth, scan_res, scanner_type):
+    def __init__(self, maker, model, weight, height, width, length, scan_res, scanner_type):
         self.scan_res = scan_res
         self.scanner_type = scanner_type
-        super().__init__(maker, model, weight, height, width, depth)
+        super().__init__(maker, model, weight, height, width, length)
 
 
 class Copier(Equipment):
-    def __init__(self, maker, model, weight, height, width, depth, speed):
+    def __init__(self, maker, model, weight, height, width, length, speed):
         self.speed = speed
-        super().__init__(maker, model, weight, height, width, depth)
+        super().__init__(maker, model, weight, height, width, length)
