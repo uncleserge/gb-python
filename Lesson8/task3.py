@@ -13,3 +13,40 @@
 # ввести текст (не число) и отобразить соответствующее сообщение. При этом работа скрипта не должна завершаться.
 
 
+class MyExceptionError(Exception):
+    def __init__(self, item, message='My exception'):
+        self.__item = item
+        self.__message = message
+        super().__init__(message)
+
+    def __str__(self):
+        return f'<{self.__item}> {self.__message}'
+
+
+def check_value(item):
+    if item.isdigit():
+        return int(item)
+    elif item.replace('.', '').isdigit():
+        return float(item)
+    else:
+        raise MyExceptionError(item, "не является числом")
+
+
+data_list = [1]
+non_stop = True
+
+while non_stop:
+
+    data = input("Введите значения, разделённые пробелом. Для остановки введите stop. >>").split()
+    print(data)
+    for el in data:
+        if el.lower() == 'stop':
+            non_stop = False
+            break
+        try:
+            data_list.append(check_value(el))
+        except MyExceptionError as err:
+            print(err)
+
+print(data_list)
+
